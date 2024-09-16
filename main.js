@@ -17,18 +17,21 @@ const app = Vue.createApp({
         addToCart() {
             this.cart += 1
         },
+        removeFromCart(){
+            this.cart -= 1
+        },
         updateVariant(index) {
             this.selectedVariant = index
         }
     },
-    computed: {
+    computed: { //contains computed properties
         title(){
             return this.brand + ' ' + this.product
         },
         image(){
             return this.variants[this.selectedVariant].image
         },
-        inStock(){
+        inStock(){ //computer property
             return this.variants[this.selectedVariant].quantity
         },
         sale(){
